@@ -42,4 +42,14 @@ nav a{
     font-weight: 500;
     color: var(--white-color);
     margin-left:3.5rem ;
+    transition: 0.5s;
+}
+nav a:hover,
+nav a.active{
+    color: var(--main-color);
+
+}
+#menu-icon{
+    font-size: 4rem;
+    display: none;
 }
