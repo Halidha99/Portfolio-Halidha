@@ -1,28 +1,34 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     border: none;
     outline: none;
-    font-family: "Poppins",sans-serif;
+    font-family: "Poppins", sans-serif;
 }
-:root{
-    --bg-color:#1f242d;
-    --second-bg-color:#323946;
-    --main-color:#7cf03d;
-    --white-color:#ffff;
-    --disabled-color:#fff3;
+
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --main-color: #7cf03d;
+    --white-color: #fff;
+    --disabled-color: #fff3;
 }
-html{
+
+html {
     font-size: 62.5%;
 }
-body{
+
+body {
     color: var(--white-color);
+    background: var(--bg-color);
 }
-header{
+
+/* ---------- HEADER ---------- */
+header {
     position: fixed;
-    top:0;
+    top: 0;
     left: 0;
     width: 100%;
     padding: 2rem 9%;
@@ -32,62 +38,68 @@ header{
     align-items: center;
     z-index: 100;
 }
-.logo{
+
+.logo {
     font-size: 3rem;
-    color:var(--white-color);
+    color: var(--white-color);
     font-weight: 700;
 }
-nav a{
+
+nav a {
     font-size: 2rem;
     font-weight: 500;
     color: var(--white-color);
-    margin-left:3.5rem ;
+    margin-left: 3.5rem;
     transition: 0.5s;
 }
-nav a:hover,
-nav a.active{
-    color: var(--main-color);
 
+nav a:hover,
+nav a.active {
+    color: var(--main-color);
 }
-#menu-icon{
+
+#menu-icon {
     font-size: 4rem;
     display: none;
 }
 
-
+/* ---------- HOME SECTION ---------- */
 section {
     position: relative;
     width: 100%;
     min-height: 100vh;
     padding: 10rem 9% 2rem;
-    background-color: var(--bg-color);
-    color: #fff;
 }
 
-/* Home Content */
 .home {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 5rem;
     flex-wrap: wrap;
 }
 
 .home-detail h1 {
     font-size: clamp(3.5rem, 10vw, 5.5rem);
-    margin: 0;
 }
 
 .home-detail h2 {
-    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-size: 3.2rem;
     margin-top: -1rem;
 }
 
+.typing {
+    color: var(--main-color);
+    border-right: 2px solid var(--main-color);
+    padding-right: 0.3rem;
+}
+
+/* ---------- BUTTONS & ICONS ---------- */
 .home-detail p {
     font-size: 1.6rem;
     margin: 1rem 0 2.5rem;
 }
 
-/* Buttons and Social Links */
 .home-detail .btn-sci {
     display: flex;
     align-items: center;
@@ -101,10 +113,9 @@ section {
     border: 0.2rem solid var(--main-color);
     border-radius: 4rem;
     box-shadow: 0 0 1rem var(--main-color);
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: var(--bg-color);
     font-weight: 500;
-    text-decoration: none;
     transition: 0.5s;
 }
 
@@ -122,14 +133,16 @@ section {
 
 .home-detail .btn-sci .sci a {
     display: inline-flex;
-    padding: 0.8rem;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
     border: 0.2rem solid var(--main-color);
     border-radius: 50%;
     font-size: 2rem;
     color: var(--main-color);
     margin: 0 0.8rem;
     transition: 0.5s;
-    text-decoration: none;
 }
 
 .home-detail .btn-sci .sci a:hover {
@@ -138,3 +151,57 @@ section {
     box-shadow: 0 0 1rem var(--main-color);
 }
 
+/* ---------- IMAGE SECTION ---------- */
+.home-img .img-box {
+    position: relative;
+    width: 32vw;
+    height: 32vw;
+    border-radius: 50%;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.home-img .img-box::before,
+.home-img .img-box::after {
+    content: "";
+    position: absolute;
+    width: 50rem;
+    height: 50rem;
+    background: conic-gradient(transparent, transparent, transparent, var(--main-color));
+    transform: rotate(0deg);
+    animation: rotate-border 10s linear infinite;
+}
+
+.home-img .img-box::after {
+    animation-delay: -5s;
+}
+
+@keyframes rotate-border {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.home-img .img-box .img-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    border-radius: 50%;
+    border: 0.01rem solid var(--bg-color);
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.home-img .img-box .img-item img {
+    position: absolute;
+    top: 3rem;
+    display: block;
+    width: 85%;
+    object-fit: cover;
+}
