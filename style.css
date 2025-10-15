@@ -474,3 +474,140 @@ section {
     font-size: 1.5rem;
     color: var(--soft-text-color);
 }
+
+
+/* ---------- SKILLS SECTION ---------- */
+.skills {
+    background: var(--second-bg-color);
+    padding: 8rem 9%;
+    text-align: center;
+}
+
+.skills .heading {
+    margin-bottom: 4rem;
+}
+
+.sub-heading {
+    font-size: 2.4rem;
+    color: var(--main-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* --- Technical Skills --- */
+.tech-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 5rem;
+}
+
+.tech-box {
+    background: var(--bg-color);
+    border: 1px solid var(--main-color);
+    border-radius: 1.5rem;
+    padding: 3rem 2rem;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 1rem rgba(0, 255, 153, 0.1);
+}
+
+.tech-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 2rem var(--main-color);
+}
+
+.tech-icon {
+    font-size: 3rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.tech-box h3 {
+    font-size: 2rem;
+    color: var(--white-color);
+    margin-bottom: 1.5rem;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.tech-tags span {
+    background: var(--second-bg-color);
+    border: 1px solid var(--main-color);
+    color: var(--white-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+}
+
+.tech-tags span:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    transform: scale(1.05);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+/* --- Soft Skills --- */
+.soft-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+}
+
+.soft-box {
+    background: var(--bg-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+.soft-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 1.5rem var(--secondary-color);
+}
+
+.soft-box i {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.soft-box h4 {
+    font-size: 1.8rem;
+    color: var(--white-color);
+    margin-bottom: 0.8rem;
+}
+
+.soft-box p {
+    font-size: 1.4rem;
+    color: var(--soft-text-color);
+    line-height: 1.6;
+}
+
+
+@media (max-width: 768px) {
+
+    .tech-box,
+    .soft-box {
+        padding: 2rem;
+    }
+
+    .tech-tags span {
+        font-size: 1.3rem;
+    }
+
+    .sub-heading {
+        font-size: 2rem;
+    }
+}
