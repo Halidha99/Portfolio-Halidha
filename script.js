@@ -1,28 +1,48 @@
-const textArray = ["Quality Assurance", "Developer"];
-const typingElement = document.querySelector(".typing");
-let textIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
+document.addEventListener("DOMContentLoaded", () => {
+  // Typing effect
+  const textArray = ["Quality Assurance", "Developer"];
+  const typingElement = document.querySelector(".typing");
+  let textIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
 
-function type() {
-  const currentText = textArray[textIndex];
-  if (isDeleting) {
-    typingElement.textContent = currentText.substring(0, charIndex--);
-  } else {
-    typingElement.textContent = currentText.substring(0, charIndex++);
+  function type() {
+    const currentText = textArray[textIndex];
+    typingElement.textContent = currentText.substring(0, charIndex);
+    if (!isDeleting && charIndex < currentText.length) {
+      charIndex++;
+    } else if (isDeleting && charIndex > 0) {
+      charIndex--;
+    } else {
+      isDeleting = !isDeleting;
+      if (!isDeleting) textIndex = (textIndex + 1) % textArray.length;
+    }
+    setTimeout(type, isDeleting ? 80 : 150);
   }
+  type();
 
-  let typingSpeed = isDeleting ? 80 : 150;
+  // Menu toggle functionality
+  const menuIcon = document.querySelector("#menu-icon");
+  const navbar = document.querySelector(".navbar");
 
-  if (!isDeleting && charIndex === currentText.length) {
-    typingSpeed = 1500;
-    isDeleting = true;
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    textIndex = (textIndex + 1) % textArray.length;
-  }
+  menuIcon.addEventListener("click", () => {
+    navbar.classList.toggle("active");
 
-  setTimeout(type, typingSpeed);
-}
+    // toggle between bars and close icons
+    if (menuIcon.classList.contains("fa-bars")) {
+      menuIcon.classList.replace("fa-bars", "fa-xmark");
+    } else {
+      menuIcon.classList.replace("fa-xmark", "fa-bars");
+    }
+  });
 
-document.addEventListener("DOMContentLoaded", type);
+  // Close menu when a nav link is clicked
+  document.querySelectorAll(".navbar a").forEach(link =>
+    link.addEventListener("click", () => {
+      navbar.classList.remove("active");
+      if (menuIcon.classList.contains("fa-xmark")) {
+        menuIcon.classList.replace("fa-xmark", "fa-bars");
+      }
+    })
+  );
+});

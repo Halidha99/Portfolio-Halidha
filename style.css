@@ -793,3 +793,265 @@ section {
         font-size: 1.3rem;
     }
 }
+
+/* ---------- CONTACT SECTION ---------- */
+.contact {
+    background: var(--bg-color);
+    padding: 8rem 9%;
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+.contact-info {
+    flex: 1 1 350px;
+    text-align: left;
+    color: var(--white-color);
+}
+
+.contact-info p {
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
+    color: var(--soft-text-color);
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.detail-box {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.detail-box i {
+    font-size: 2rem;
+    color: var(--main-color);
+}
+
+.detail-box h4 {
+    font-size: 1.6rem;
+    margin-bottom: 0.3rem;
+    color: var(--white-color);
+}
+
+.detail-box a,
+.detail-box p {
+    font-size: 1.4rem;
+    color: var(--soft-text-color);
+    transition: 0.3s;
+}
+
+.detail-box a:hover {
+    color: var(--main-color);
+}
+
+.social-links {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1.2rem;
+}
+
+.social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    transition: all 0.4s ease;
+}
+
+.social-links a:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1 1 400px;
+    background: var(--second-bg-color);
+    border-radius: 1.5rem;
+    padding: 3rem;
+    border: 1px solid var(--main-color);
+    box-shadow: 0 0 1rem rgba(0, 255, 153, 0.1);
+}
+
+.input-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    border: 1px solid var(--main-color);
+    border-radius: 0.8rem;
+    background: transparent;
+    color: var(--white-color);
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--hover-color);
+    box-shadow: 0 0 0.8rem var(--hover-color);
+}
+
+.contact-form .btn {
+    display: inline-block;
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 1.6rem;
+}
+
+/* ==========================
+   RESPONSIVE STYLES
+   ========================== */
+
+/* --- Tablets (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+    header {
+        padding: 1rem 5%;
+    }
+
+    section {
+        padding: 8rem 5%;
+    }
+
+    .home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-img .img-box {
+        width: 50vw;
+        height: 50vw;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .education-container,
+    .tech-container,
+    .soft-container,
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* --- Mobile Devices (max-width: 768px) --- */
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+        font-size: 3rem;
+        cursor: pointer;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background: var(--bg-color);
+        flex-direction: column;
+        display: none;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        margin: 1.5rem 0;
+        font-size: 2rem;
+    }
+
+    .home-img .img-box {
+        width: 65vw;
+        height: 65vw;
+    }
+
+    .heading {
+        font-size: 2.6rem;
+    }
+
+    .about-content p {
+        font-size: 1.5rem;
+    }
+
+    .project-info {
+        text-align: center;
+    }
+
+    .project-buttons {
+        justify-content: center;
+    }
+
+    .contact-form {
+        padding: 2rem;
+    }
+}
+
+/* --- Small Mobile Devices (max-width: 480px) --- */
+@media (max-width: 480px) {
+    html {
+        font-size: 55%;
+    }
+
+    .logo {
+        font-size: 2.4rem;
+    }
+
+    .home-detail h1 {
+        font-size: 3rem;
+    }
+
+    .home-detail h2 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 0.8rem 2rem;
+        font-size: 1.4rem;
+    }
+
+    .about-img {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .project-thumb {
+        height: 180px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 1.3rem;
+    }
+}
