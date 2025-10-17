@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Typing effect
-  const textArray = ["Quality Assurance", "Developer"];
+  const textArray = ["Quality Assurance", "Software Engineer"];
   const typingElement = document.querySelector(".typing");
   let textIndex = 0;
   let charIndex = 0;

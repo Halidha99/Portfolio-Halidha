@@ -17,7 +17,7 @@
     --white-color: #ffffff;
     --soft-text-color: #a0a3b0;
     --disabled-color: #ffffff33;
-  
+
 }
 
 html {
@@ -250,7 +250,7 @@ section {
 .heading:hover::after {
     width: 120px;
     background: linear-gradient(90deg, #7cf03d, #05e899);
- 
+
 }
 
 .about-container {
@@ -321,7 +321,7 @@ section {
 .about-content h3 {
     font-size: 2.4rem;
     margin-bottom: 1.5rem;
-    
+
 }
 
 .about-content p {
@@ -383,6 +383,7 @@ section {
         text-align: center;
     }
 }
+
 /* ---------- EDUCATION SECTION ---------- */
 .education {
     background: var(--second-bg-color);
