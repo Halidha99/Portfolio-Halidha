@@ -379,10 +379,12 @@
 </section>
 
 
-<!-- Contact Section -->
+<!-- CONTACT SECTION -->
 <section id="contact" class="contact">
     <h2 class="heading">Get in <span>Touch</span></h2>
+
     <div class="contact-container">
+        <!-- LEFT SIDE: CONTACT INFO -->
         <div class="contact-info">
             <p>
                 Whether you're looking for a dedicated intern, have an opportunity to
@@ -424,17 +426,19 @@
             </div>
         </div>
 
-        <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
+        <!-- RIGHT SIDE: CONTACT FORM -->
+        <form class="contact-form" onsubmit="submitContact(event)">
             <div class="input-box">
-                <input type="text" name="name" placeholder="Full Name" required />
-                <input type="email" name="email" placeholder="Email Address" required />
+                <input type="text" id="name" placeholder="Full Name" required />
+                <input type="email" id="email" placeholder="Email Address" required />
+                <input type="text" id="subject" placeholder="Subject" />
             </div>
-            <textarea name="message" rows="6" placeholder="Your Message..." required></textarea>
+            
+            <textarea id="message" rows="6" placeholder="Your Message..." required></textarea>
             <button type="submit" class="btn">Send Message</button>
         </form>
     </div>
 </section>
-
 
 
     <script src="script.js"></script>
